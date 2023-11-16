@@ -40,5 +40,7 @@ int close_file(FILE *file, const char *file_name);
        VERROR("troubles filling the file %s", (file_name)); \
     } while (0)
 #define VERROR_MEM VERROR("memory allocation failure")
+
+#define VERROR_SSCANF(line) VERROR("troubles reading the line %s", line)
                                                     
 #endif

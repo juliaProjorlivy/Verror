@@ -16,7 +16,7 @@ OBJ = $(patsubst %.cpp, build/%.o, $(subst src/, , $(SRCS)))
 EXECUTABLE = verror
 VALGRIND = valgrind --leak-check=full --leak-resolution=med ./$(EXECUTABLE)
 OUT_LIB_FILE_NAME = libVerror.a
-OUT_DIR = ./lib
+OUT_DIR = lib
 
 all: $(OBJ)
 	@echo "CXX $(EXECUTABLE)"
@@ -34,3 +34,4 @@ lib: $(OBJ)
 
 clean:
 	@rm -f build/*.o
+	rm -f $(OUT_DIR)/$(OUT_LIB_FILE_NAME)
