@@ -10,14 +10,14 @@ void verror(const char* format, ...);
 
 int close_file(FILE *file, const char *file_name);
 
-#define RED           "\x1b[31;1m"
-#define END_OF_RED "\x1b[39;49m\n" 
+#define VERRRO_RED           "\x1b[31;1m"
+#define END_OF_VERRRO_RED "\x1b[39;49m\n" 
 
 #define VERROR(...) do                                              \
     {                                                               \
-        fprintf(stderr, RED "ERROR:%s (%d)\n", __FILE__, __LINE__); \
+        fprintf(stderr, VERRRO_RED "ERROR:%s (%d)\n", __FILE__, __LINE__); \
         verror(__VA_ARGS__);                                        \
-        fprintf(stderr, END_OF_RED);                                \
+        fprintf(stderr, END_OF_VERRRO_RED);                                \
     } while (0)
 
 #define VERROR_FILL_FILE(file_name) do                                              \
